@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Фейковый бот для тестов
+ * Р¤РµР№РєРѕРІС‹Р№ Р±РѕС‚ РґР»СЏ С‚РµСЃС‚РѕРІ
  */
 public class TestBot implements Bot {
 
     /**
-     * Список сообщений, которые бот отправил
+     * РЎРїРёСЃРѕРє СЃРѕРѕР±С‰РµРЅРёР№, РєРѕС‚РѕСЂС‹Рµ Р±РѕС‚ РѕС‚РїСЂР°РІРёР»
      */
     List<String> messages = new ArrayList<>();
 
@@ -19,7 +19,7 @@ public class TestBot implements Bot {
     }
 
     /**
-     * @return список со всеми сообщениями, которые бот отправил
+     * @return СЃРїРёСЃРѕРє СЃРѕ РІСЃРµРјРё СЃРѕРѕР±С‰РµРЅРёСЏРјРё, РєРѕС‚РѕСЂС‹Рµ Р±РѕС‚ РѕС‚РїСЂР°РІРёР»
      */
     public List<String> getMessages() {
         return messages;

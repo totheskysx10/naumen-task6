@@ -5,17 +5,17 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /**
- * Тесты логики работы с заметками
+ * РўРµСЃС‚С‹ Р»РѕРіРёРєРё СЂР°Р±РѕС‚С‹ СЃ Р·Р°РјРµС‚РєР°РјРё
  */
 public class NoteLogicTest {
 
     /**
-     * Логика работы с заметками
+     * Р›РѕРіРёРєР° СЂР°Р±РѕС‚С‹ СЃ Р·Р°РјРµС‚РєР°РјРё
      */
     private NoteLogic noteLogic;
 
     /**
-     * Создаёт новый объект NoteLogic перед каждым тестом
+     * РЎРѕР·РґР°С‘С‚ РЅРѕРІС‹Р№ РѕР±СЉРµРєС‚ NoteLogic РїРµСЂРµРґ РєР°Р¶РґС‹Рј С‚РµСЃС‚РѕРј
      */
     @BeforeEach
     void setup() {
@@ -23,7 +23,7 @@ public class NoteLogicTest {
     }
 
     /**
-     * Тест команд /add и /notes
+     * РўРµСЃС‚ РєРѕРјР°РЅРґ /add Рё /notes
      */
     @Test
     void testAddAndNotesCommands() {
@@ -34,7 +34,7 @@ public class NoteLogicTest {
     }
 
     /**
-     * Тест команды /edit
+     * РўРµСЃС‚ РєРѕРјР°РЅРґС‹ /edit
      */
     @Test
     void testEditCommand() {
@@ -46,7 +46,7 @@ public class NoteLogicTest {
     }
 
     /**
-     * Тест команды /del
+     * РўРµСЃС‚ РєРѕРјР°РЅРґС‹ /del
      */
     @Test
     void testDelCommand() {
