@@ -1,6 +1,7 @@
 package example.bot;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -11,7 +12,7 @@ public class TestBot implements Bot {
     /**
      * Список сообщений, которые бот отправил
      */
-    List<String> messages = new ArrayList<>();
+    private final List<String> messages = new ArrayList<>();
 
     @Override
     public void sendMessage(Long chatId, String message) {
@@ -22,6 +23,6 @@ public class TestBot implements Bot {
      * @return список со всеми сообщениями, которые бот отправил
      */
     public List<String> getMessages() {
-        return messages;
+        return Collections.unmodifiableList(messages);
     }
 }
