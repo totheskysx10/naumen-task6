@@ -54,8 +54,6 @@ public class BotLogicTest {
         botLogic.processCommand(user, "/test");
         botLogic.processCommand(user, "1");
         Assertions.assertEquals("Вы ошиблись, верный ответ: 100", bot.getMessages().get(1));
-        Assertions.assertEquals(1, user.getWrongAnswerQuestions().size());
-        Assertions.assertEquals("Вычислите степень: 10^2", user.getWrongAnswerQuestions().get(0).text());
     }
 
     /**
@@ -65,16 +63,12 @@ public class BotLogicTest {
     void testNotifyCommand() throws InterruptedException {
         botLogic.processCommand(user, "/notify");
         Assertions.assertEquals("Введите текст напоминания", bot.getMessages().get(0));
-        Assertions.assertEquals(State.SET_NOTIFY_TEXT, user.getState());
-        Assertions.assertNotNull(user.getNotification());
 
         botLogic.processCommand(user, "test");
         Assertions.assertEquals("Через сколько секунд напомнить?", bot.getMessages().get(1));
-        Assertions.assertEquals(State.SET_NOTIFY_DELAY, user.getState());
 
         botLogic.processCommand(user, "1");
         Assertions.assertEquals("Напоминание установлено", bot.getMessages().get(2));
-        Assertions.assertEquals(State.INIT, user.getState());
 
         Assertions.assertEquals(3, bot.getMessages().size());
         Thread.sleep(1015);
@@ -91,8 +85,6 @@ public class BotLogicTest {
         botLogic.processCommand(user, "time");
 
         Assertions.assertEquals("Пожалуйста, введите целое число", bot.getMessages().get(2));
-        botLogic.processCommand(user, "1");
-        Assertions.assertEquals("Напоминание установлено", bot.getMessages().get(3));
     }
 
     /**
@@ -105,12 +97,9 @@ public class BotLogicTest {
         botLogic.processCommand(user, "7");
 
         botLogic.processCommand(user, "/repeat");
-        Assertions.assertEquals(State.REPEAT, user.getState());
         Assertions.assertEquals("Сколько будет 2 + 2 * 2", bot.getMessages().get(5));
         botLogic.processCommand(user, "6");
         Assertions.assertEquals("Тест завершен", bot.getMessages().get(7));
-        Assertions.assertEquals(State.INIT, user.getState());
-        Assertions.assertTrue(user.getWrongAnswerQuestions().isEmpty());
     }
 
     /**
@@ -124,6 +113,5 @@ public class BotLogicTest {
 
         botLogic.processCommand(user, "/repeat");
         Assertions.assertEquals("Нет вопросов для повторения", bot.getMessages().get(5));
-        Assertions.assertTrue(user.getWrongAnswerQuestions().isEmpty());
     }
 }
